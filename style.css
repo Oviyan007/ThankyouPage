@@ -25,6 +25,8 @@ body {
   background-size: cover;
   background-position: center;
   position: relative; /* Needed for pseudo-element */
+  height: 100vh;
+  width: 100vw;
   
 }
 
@@ -200,8 +202,9 @@ color: var(--color-yellow);
   margin-top: 10px;
 }
 .joinus{
-  height:400px;
+  height:700px;
   color: var(--color-yellow);
+
 }
 .card-container{
   display: flex;
@@ -211,17 +214,22 @@ color: var(--color-yellow);
 
 
 }
+.card-container img{
+  height: 80px;
+  padding-top: 10px;
+}
 .card-1{
   text-align: center;
   height: 100px;
   width: 200px;
   color: var(--color-yellow);
+
 }
 
 .card-2{
   text-align: center;
-  height: 100px;
-  width: 200px;
+  height: 300px;
+  /* width: 200px; */
   color: var(--color-yellow);
   
 }
@@ -240,16 +248,17 @@ footer {
   position: relative;
   width: 100%;
   text-align: center;
+  
   padding: 10px 0;
-  /* background: var(--color-black); */
-  z-index: 10; /* Ensure it stays above the background */
+  margin-top: 35px;
 }
 
 footer p {
-  margin-top: 35px;
   font-size: 1rem;
   color: var(--color-white);
+  position: relative;
 }
+
 @media (max-width: 768px) {
   
   .countdown {
