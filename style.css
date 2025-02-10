@@ -8,6 +8,7 @@
   --color-very-dark-blue: #1e1f29;
   --color-black: #191a24;
   --color-yellow: rgb(255, 217, 0);
+  
 }
 
 
@@ -17,10 +18,30 @@
  margin: 0px;
  box-sizing: border-box;
  
- color: var(--color-white);
+ color: var(--color-yellow);
 }
-body{
-  background: var(--color-black);
+body {
+  background: url(./image/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Needed for pseudo-element */
+  
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./image/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Apply blur */
+  filter: brightness(80%);
+  z-index: -1; /* Send it behind content */
+  
 }
 
 
@@ -31,6 +52,7 @@ body{
   overflow: hidden;
   background-color: var(--color-very-dark-blue);
 }
+
 
 main {
  
@@ -120,7 +142,7 @@ main {
 .metric {
   text-transform: uppercase;
   text-align: center;
-  color: var(--color-white);
+  color: var(--color-yellow);
   font-size: .6rem;
   letter-spacing: 3px;
 }
@@ -138,10 +160,11 @@ main {
 justify-content: center;
 margin: 10px;
 font-family: "Handlee", serif;
-font-weight: 500;
-font-style: normal;
+font-weight: 800;
+font-style:normal;
 font-size: 2rem;
 color: var(--color-yellow);
+letter-spacing: 2px;
 
 }
 .img-container img{
@@ -213,11 +236,22 @@ color: var(--color-yellow);
 
 
 /* personal section ends */
-footer p{
-    
-  margin-top: 20px;
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  /* background: var(--color-black); */
+  z-index: 10; /* Ensure it stays above the background */
+}
+
+footer p {
+  margin-top: 35px;
+  font-size: 1rem;
+  color: var(--color-white);
 }
 @media (max-width: 768px) {
+  
   .countdown {
     display: flex;
     flex-wrap: wrap;
@@ -241,7 +275,7 @@ footer p{
   .img-container img {
     max-width: 80%; /* Make the image smaller */
     height: auto;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   .p-container {
     flex-direction: column; /* Stack elements vertically */
@@ -252,7 +286,7 @@ footer p{
   .img-container img {
     max-width: 80%; /* Make the image smaller */
     height: auto;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .quote-container h1 {
@@ -268,14 +302,16 @@ footer p{
   }
 
   .card-1, .card-2 {
-    margin-top: 15px;
+    margin-bottom: 15px;
     width: 80%; /* Make cards take up most of the screen */
     text-align: center; /* Center text */
   }
-  footer p{
-    
-    margin-top: 20px;
-    display: block;
+  .card-2 img{
+    margin-top: 25px;
+  }
+  footer {
+    position: relative;
+    bottom: 0;
   }
 }
 
